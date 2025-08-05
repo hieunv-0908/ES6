@@ -10,7 +10,6 @@ function groupAnagrams(words) {
 
         groups[sorted].push(word);
     }
-
     return Object.values(groups);
 }
 const input = ["eat", "tea", "tan", "ate", "nat", "bat"];
