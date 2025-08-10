@@ -1,64 +1,79 @@
-class Product{
-    readonly id:string;
-    _name:string;
-    price:number;
-    constructor(id:string,_name:string,price:number){
+class Book {
+    private id: string;
+    public title: string;
+    public author: string;
+
+    constructor(id: string, title: string, author: string) {
         this.id = id;
-        this._name = _name;
-        this.price = price;
+        this.title = title;
+        this.author = author;
+    }
+
+    public getId(): string {
+        return this.id;
+    }
+
+    public updateInfo(newTitle: string, newAuthor: string): void {
+        this.title = newTitle;
+        this.author = newAuthor;
     }
 }
 
-class Order_item{
-    product:Product;
-    quantity:number;
-    constructor(product:Product,quantity:number){
-        this.product = product;
-        this.quantity = quantity;
+class Library {
+    private books: Book[];
+
+    constructor() {
+        this.books = [];
+    }
+
+    public addBook(book: Book): void {
+        this.books.push(book);
+    }
+
+    public updateBookById(id: string, newTitle: string, newAuthor: string): void {
+        const book = this.books.find(b => b.getId() === id);
+        if (book) {
+            book.updateInfo(newTitle, newAuthor);
+            console.log(`Đã cập nhật sách có id: ${id}`);
+        } else {
+            console.log(`Không tìm thấy sách có id: ${id}`);
+        }
+    }
+
+    public searchBooksByTitle(keyword: string): void {
+        const foundBooks = this.books.filter(b =>
+            b.title.toLowerCase().includes(keyword.toLowerCase())
+        );
+
+        if (foundBooks.length > 0) {
+            console.log(`Kết quả tìm kiếm với từ khóa "${keyword}":`);
+            foundBooks.forEach(b => {
+                console.log(`- ID: ${b.getId()}, Title: ${b.title}, Author: ${b.author}`);
+            });
+        } else {
+            console.log(`Không tìm thấy sách nào với từ khóa "${keyword}".`);
+        }
+    }
+
+    public printBooks(): void {
+        console.log("Danh sách sách trong thư viện:");
+        this.books.forEach(b => {
+            console.log(`- ID: ${b.getId()}, Title: ${b.title}, Author: ${b.author}`);
+        });
     }
 }
 
-class Order{
-    order_id:string;
-    customer_name:string;
-    items:Order_item[];
-    note?:string;
-    constructor(order_id:string,customer_name:string,note?:string) {
-        this.order_id = order_id;
-        this.customer_name = customer_name;
-        this.items = [];
-        this.note = note ?? "";
-    }
-}
+// ====== Test ======
+const library = new Library();
 
+library.addBook(new Book("B01", "Lập trình JS", "Nguyễn Văn A"));
+library.addBook(new Book("B02", "Học TypeScript", "Trần Thị B"));
+library.addBook(new Book("B03", "TypeScript Nâng Cao", "Lê Văn C"));
 
-function calculateOrderTotal(order: Order): number{
-    return order.items.reduce((acc:number,item:Order_item)=>{
-        let product_total_price = item.quantity * item.product.price;
-        return acc + product_total_price;
-    },0)
-}
+library.printBooks();
 
-function printOrder(order: Order): void{
-    console.log
-    (`
-        Đơn hàng: ${order.order_id}    
-        Khách hàng ${order.customer_name}
-        Sản phẩm:
-        ${order.items.map(item=>`-${item.product._name} X ${item.quantity} --> ${item.quantity * item.product.price}`).join("\n        ")}
-        Tổng Cộng :${calculateOrderTotal(order)}
-        ${(order.note)?`Ghi chú: ${order.note}`:``}
-    `);
-}
+console.log("\n-- Tìm sách có chữ 'TypeScript' --");
+library.searchBooksByTitle("TypeScript");
 
-let product1 = new Product("A01","Áo sơ mi",250);
-let product2 = new Product("A02","Quần tây",400);
-
-let order_item1 = new Order_item(product1,2);
-let order_item2 = new Order_item(product2,1);
-
-let order1 = new Order("#ORD001","Nguyễn Văn A","Cho một gáo nước mưa");
-order1.items.push(order_item1)
-order1.items.push(order_item2)
-
-printOrder(order1)
+console.log("\n-- Tìm sách có chữ 'Python' --");
+library.searchBooksByTitle("Python");
