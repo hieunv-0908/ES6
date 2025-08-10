@@ -63,7 +63,6 @@ class Library {
     }
 }
 
-// ====== Test ======
 const library = new Library();
 
 library.addBook(new Book("B01", "Lập trình JS", "Nguyễn Văn A"));
