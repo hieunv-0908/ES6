@@ -1,0 +1,55 @@
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* khoảng cách giữa 2 hàng */
+  margin: 20px;
+}
+
+/* Hàng 1 */
+#headerElement1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#headerElement1 h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#headerElement1 button {
+  background-color: #1a73e8; /* xanh */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#headerElement1 button:hover {
+  background-color: #1669c1;
+}
+
+/* Hàng 2 */
+#headerElement2 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#headerElement2 select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#headerElement2 input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 220px;
+}

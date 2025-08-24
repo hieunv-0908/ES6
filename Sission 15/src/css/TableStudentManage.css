@@ -1,0 +1,80 @@
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 14px;
+}
+
+.student-table th,
+.student-table td {
+  border: 1px solid #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+.student-table thead {
+  background-color: #f9fafb;
+  font-weight: bold;
+  color: #333;
+}
+
+.student-table tr:hover {
+  background-color: #fafafa;
+}
+
+/* Trạng thái */
+.status {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status.active {
+  background-color: #e6ffed;
+  color: #0aaf3f;
+  border: 1px solid #a6f4c5;
+}
+
+.status.inactive {
+  background-color: #ffe6e6;
+  color: #d93025;
+  border: 1px solid #ffb3b3;
+}
+
+/* Nút chức năng */
+.actions {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-block {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}
+
+.btn-edit {
+  background-color: #fff7ed;
+  color: #d97706;
+}
+
+.btn-delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
