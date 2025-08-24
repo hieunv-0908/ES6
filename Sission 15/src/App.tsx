@@ -5,6 +5,7 @@ import DateInput from "./component/DateInput"
 import Progress from "./component/Progress"
 import StudentManage from "./component/studentManage";
 import ListPost from "./component/ListPost";
+import FormEmail from "./component/FormEmail"; 
 import React, { Component } from 'react'
 
 export default class App extends Component {
@@ -15,7 +16,8 @@ export default class App extends Component {
         {/* <DateInput></DateInput> */}
         {/* <Progress></Progress> */}
         {/* <StudentManage></StudentManage> */}
-        <ListPost />
+        {/* <ListPost /> */}
+        <FormEmail></FormEmail>
       </div>
     )
   }
