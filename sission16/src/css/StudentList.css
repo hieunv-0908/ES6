@@ -1,0 +1,40 @@
+/* StudentList.css */
+.student-list-container {
+    background-color: #1e1e1e; /* nền tối */
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.student-list-container h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.student-list-container h1::before {
+    content: '📚'; /* icon sách như ảnh */
+    font-size: 28px;
+}
+
+.student-item {
+    background-color: #dff6ff; /* màu xanh nhạt */
+    color: #0077b6; /* chữ xanh đậm */
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.student-item:hover {
+    background-color: #bde0fe;
+    transform: translateY(-2px);
+}

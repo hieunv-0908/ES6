@@ -1,0 +1,35 @@
+/* LoginStatus.css */
+.login-card {
+    background-color: #eef5fb; /* màu nền nhạt */
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 0 1000px rgba(0,0,0,0.7) inset; /* tạo nền tối xung quanh */
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.login-card h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.login-card button {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-card button:hover {
+    background-color: #115293;
+}
