@@ -4,6 +4,7 @@ import ButtonComponent from './Components/ButtonComponent'
 import ComponentCart from './Components/ComponentCart'
 import DropdowComponent from './Components/DropdowComponent'
 import AlertComponent from './Components/AlertComponent'
+import Spin from './Components/Spin'
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
       {/* <InputComponent /> */}
       {/* <ComponentCart></ComponentCart> */}
       {/* <DropdowComponent></DropdowComponent> */}
-      <AlertComponent></AlertComponent>
+      {/* <AlertComponent></AlertComponent> */}
+      <Spin />
     </div>
   )
 }
